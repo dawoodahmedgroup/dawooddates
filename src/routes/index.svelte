@@ -7,7 +7,7 @@
         window.location.href = path;
     }
 
-    let showContact;
+    let showContact: boolean;
 
     let formValues = {
         name: '',
@@ -85,12 +85,6 @@
 
         h2 {
             font-size: 25px;
-        }
-    }
-
-    ul {
-        li {
-            list-style: none;
         }
     }
 
@@ -191,7 +185,7 @@
             }
         }
 
-        textarea {
+        input[type=text] {
             resize: none;
             width: 500px;
             height: 150px;
