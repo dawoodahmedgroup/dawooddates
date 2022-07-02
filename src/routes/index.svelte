@@ -1,12 +1,19 @@
 <script lang="ts">
     import Icon from '@iconify/svelte';
     import Popup from '../components/Popup.svelte'
+    import ProductCard from '../components/ProductCard.svelte';
 
     function redirect(path: string) {
         window.location.href = path;
     }
 
     let showContact;
+
+    let formValues = {
+        name: '',
+        email: '',
+        message: ''
+    };
 </script>
 
 <main class="container">
@@ -15,6 +22,7 @@
         <div class="navlinks">
             <button class="navitem">Home</button>
             <button class="navitem">About</button>
+            <button on:click={() => redirect('#products')} class="navitem">Products</button>
             <button on:click={() => showContact = true} class="navitem">Contact</button>
             <button class="navitem-call" on:click={() => redirect('tel:923002039046')}><Icon icon="carbon:phone-filled" /></button>
         </div>
@@ -24,17 +32,27 @@
         <h2>Quality Redifined.</h2>
     </header>
     <section class="infocard">
-        <h1>Dawood Dates is the leading company in the dates industry, setting high standards of quality, and assuring customers of good product.</h1>
+        <div class="infoContainer">
+            <h1>Dawood Dates is the leading company in the dates industry, setting high standards of quality, and assuring customers of good product.</h1>
+        </div>
+    </section>
+    <section id="products" class="products">
+        <div class="product">
+            <ProductCard name="1" description="description" imageURL="./items/test.jpg"/>
+        </div>
+        <div class="product">
+            <ProductCard name="2" description="description here" imageURL="./items/test.jpg"/>
+        </div>
     </section>
 </main>
 <Popup bind:show={showContact}>
    <h2 class="contacttext">Contact</h2>
    <form class="contactForm" action="">
-    <input id="name" required placeholder="Name" type="name">
+    <input id="name" required placeholder="Name" type="name" bind:value={formValues.name}>
     <br>
-    <input id="email" required placeholder="Email" type="email">
+    <input id="email" required placeholder="Email" type="email" bind:value={formValues.email}>
     <br>
-    <input id="Message" required placeholder="Message" type="text">
+    <input id="Message" required placeholder="Message" type="text" bind:value={formValues.message}>
     <br>
     <input type="submit" value="Send Message">
    </form>
@@ -47,7 +65,6 @@
         display: flex;
         flex-direction: column;
         width: 100vw;
-        height: 100vh;
         background: #E7F2F8;
     }
 
@@ -174,7 +191,7 @@
             }
         }
 
-        input[type=text] {
+        textarea {
             resize: none;
             width: 500px;
             height: 150px;
@@ -189,12 +206,16 @@
     }
 
     .infocard {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .infoContainer {
         height: 265px;
         width: 500px;
         display: flex;
-        margin-top: 170px;
-        margin-left: 150px;
-        margin-right: 100px;
+        margin-top: 50px;
         padding: 30px;
         background: #74BDCB;
         border-radius: 15px;
@@ -209,5 +230,14 @@
     .contacttext {
         margin-bottom: 15px;
         border-bottom: 2px solid red;
+    }
+
+    .products {
+        margin-top: 25px;
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
     }
 </style>
