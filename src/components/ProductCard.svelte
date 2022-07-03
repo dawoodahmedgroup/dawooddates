@@ -17,8 +17,9 @@
         border-radius: 15px;
         display: flex;
         flex-direction: column;
-        background-color: #fff4f4;
+        background-color: #74BDCB;
         height: 400px;
+        color: white;
         width: 400px;
         padding: 8px;
         margin-top: 30px;

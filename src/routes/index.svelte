@@ -9,10 +9,14 @@
 
     let showContact: boolean;
 
-    let formValues = {
+    let formValues: any = {
         name: '',
         email: '',
         message: ''
+    };
+
+    function handleForm() {
+        console.log(JSON.stringify(formValues))
     };
 </script>
 
@@ -47,14 +51,14 @@
 </main>
 <Popup bind:show={showContact}>
    <h2 class="contacttext">Contact</h2>
-   <form class="contactForm" action="">
+   <form class="contactForm">
     <input id="name" required placeholder="Name" type="name" bind:value={formValues.name}>
     <br>
     <input id="email" required placeholder="Email" type="email" bind:value={formValues.email}>
     <br>
     <input id="Message" required placeholder="Message" type="text" bind:value={formValues.message}>
     <br>
-    <input type="submit" value="Send Message">
+    <input on:click={()=> handleForm()} type="submit" value="Send Message">
    </form>
    
 </Popup>
@@ -92,7 +96,7 @@
         border-bottom: 1px solid #dadce0;
         background: #fff4f4;
         width: 100vw;
-        height: 100px;
+        height: 95px;
         box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.149);
 
         /* Layout */
@@ -101,8 +105,8 @@
         justify-content: space-between;
 
         .logo {
-            width: 140px;
-            height: 70px;
+            width: 130px;
+            height: 65px;
             margin-left: 45px;
             cursor: pointer;
         }
@@ -130,7 +134,7 @@
             .navitem {
                 font-size: 1.35rem;
                 height: 50px;
-                width: 110px;
+                width: 115px;
                 border: none;
                 cursor: pointer;
                 background: #fff4f4;
@@ -196,6 +200,7 @@
             background: blue;
             color: white;
             border-bottom: 2px solid rgb(85, 255, 0);
+            cursor: pointer;
         }
     }
 
