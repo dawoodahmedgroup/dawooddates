@@ -51,7 +51,7 @@
 </main>
 <Popup bind:show={showContact}>
    <h2 class="contacttext">Contact</h2>
-   <form class="contactForm">
+   <form data-splitbee-event="Contact" class="contactForm">
     <input id="name" required placeholder="Name" type="name" bind:value={formValues.name}>
     <br>
     <input id="email" required placeholder="Email" type="email" bind:value={formValues.email}>
