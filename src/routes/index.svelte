@@ -206,7 +206,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-bottom: 200px;
+        margin-bottom: 100px;
     }
 
     .infoContainer {

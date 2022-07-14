@@ -26,7 +26,7 @@
   position: relative;
   width: 320px;
   height: 510px;
-  background: #603813;
+  background: #4FABBD;
   border-radius: 20px;
   overflow: hidden;
   margin-bottom: 50px;
@@ -38,7 +38,7 @@
   top: -50%;
   width: 100%;
   height: 100%;
-  background: #a76e19;
+  background: #74BDCB;
   transform: skewY(345deg);
   transition: 0.5s;
 }
