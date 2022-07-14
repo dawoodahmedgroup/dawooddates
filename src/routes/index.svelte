@@ -33,7 +33,8 @@
     </div>
     <header>
         <h1>Dawood Dates</h1>
-        <h2>Quality Redifined.</h2>
+        <h2>High Quality Dates</h2>
+        <h2>From Pakistan To The World.</h2>
     </header>
     <section class="infocard">
         <div class="infoContainer">
@@ -41,12 +42,9 @@
         </div>
     </section>
     <section id="products" class="products">
-        <div class="product">
-            <ProductCard name="1" description="description" imageURL="./items/test.jpg"/>
-        </div>
-        <div class="product">
-            <ProductCard name="2" description="description here" imageURL="./items/test.jpg"/>
-        </div>
+        <ProductCard name="Al Mahir Aseel Dates" description="High Quality Aseel Dates" imageURL="./items/croppedPouch.png"/>
+        <ProductCard name="Al Mahir Aseel Dates" description="High Quality Aseel Dates" imageURL="./items/croppedPouch.png"/>
+        <ProductCard name="Al Mahir Aseel Dates" description="High Quality Aseel Dates" imageURL="./items/croppedPouch.png"/>
     </section>
 </main>
 <Popup bind:show={showContact}>
@@ -208,6 +206,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-bottom: 200px;
     }
 
     .infoContainer {
@@ -232,11 +231,12 @@
     }
 
     .products {
-        margin-top: 25px;
+        margin: 25px;
         display: flex;
         flex-direction: row;
         gap: 20px;
         align-items: center;
-        justify-content: center;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
     }
 </style>
