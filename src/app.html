@@ -8,16 +8,18 @@
 		<script async src="https://cdn.splitbee.io/sb.js"></script>
 		<style>
 			*::-webkit-scrollbar {
-  display: none;
-}
+				display: none;
+			}
 
 			*{
 				margin: 0;
 				box-sizing: border-box;
 				padding: 0;
 				font-family: 'Montserrat', sans-serif;
-				-ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+				overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  perspective: 2px;
 			}
 		</style>
 		%sveltekit.head%

@@ -101,9 +101,9 @@
   opacity: 0;
   padding: 10px 30px;
   margin-top: 15px;
-  color: #603813;
+  color: #fff;
   text-decoration: none;
-  background: #ffce00;
+  background: #000;
   border-radius: 30px;
   text-transform: uppercase;
   letter-spacing: 1px;

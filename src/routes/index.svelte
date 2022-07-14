@@ -31,17 +31,17 @@
             <button class="navitem-call" on:click={() => redirect('tel:923002039046')}><Icon icon="carbon:phone-filled" /></button>
         </div>
     </div>
-    <header>
+    <header class="">
         <h1>Dawood Dates</h1>
         <h2>High Quality Dates</h2>
         <h2>From Pakistan To The World.</h2>
     </header>
-    <section class="infocard">
+    <section class="infocard ">
         <div class="infoContainer">
             <h1>Dawood Dates is the leading company in the dates industry, setting high standards of quality, and assuring customers of good product.</h1>
         </div>
     </section>
-    <section id="products" class="products">
+    <section id="products" class="products ">
         <ProductCard name="Al Mahir Aseel Dates" description="High Quality Aseel Dates" imageURL="./items/croppedPouch.png"/>
         <ProductCard name="Al Mahir Aseel Dates" description="High Quality Aseel Dates" imageURL="./items/croppedPouch.png"/>
         <ProductCard name="Al Mahir Aseel Dates" description="High Quality Aseel Dates" imageURL="./items/croppedPouch.png"/>
@@ -63,6 +63,7 @@
 
 <style lang="scss">
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;900&display=swap');
+
     .container {
         display: flex;
         flex-direction: column;
