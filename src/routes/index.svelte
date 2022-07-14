@@ -49,14 +49,14 @@
 </main>
 <Popup bind:show={showContact}>
    <h2 class="contacttext">Contact</h2>
-   <form data-splitbee-event="Contact" class="contactForm">
+   <form action="mailto:mahir@molai.dev" method="post" enctype="text/plain" data-splitbee-event="Contact" class="contactForm">
     <input id="name" required placeholder="Name" type="name" bind:value={formValues.name}>
     <br>
     <input id="email" required placeholder="Email" type="email" bind:value={formValues.email}>
     <br>
     <input id="Message" required placeholder="Message" type="text" bind:value={formValues.message}>
     <br>
-    <input on:click={()=> handleForm()} type="submit" value="Send Message">
+    <button type="submit">Submit</button>
    </form>
    
 </Popup>
@@ -195,7 +195,7 @@
 }
 
 
-        input[type=submit] {
+        button[type=submit] {
             background: blue;
             color: white;
             border-bottom: 2px solid rgb(85, 255, 0);
@@ -239,5 +239,10 @@
         align-items: center;
         justify-content: space-evenly;
         flex-wrap: wrap;
+    }
+
+    @media (max-width: 850px) {
+        .navitem { display:none; }
+        .navitem-call { display: none; }
     }
 </style>
