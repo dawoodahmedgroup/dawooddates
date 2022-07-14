@@ -8,16 +8,6 @@
     }
 
     let showContact: boolean;
-
-    let formValues: any = {
-        name: '',
-        email: '',
-        message: ''
-    };
-
-    function handleForm() {
-        console.log(JSON.stringify(formValues))
-    };
 </script>
 
 <main class="container">
@@ -49,12 +39,12 @@
 </main>
 <Popup bind:show={showContact}>
    <h2 class="contacttext">Contact</h2>
-   <form action="mailto:mahir@molai.dev" method="post" enctype="text/plain" data-splitbee-event="Contact" class="contactForm">
-    <input id="name" required placeholder="Name" type="name" bind:value={formValues.name}>
+   <form action="/api/contact" method="post" enctype="text/plain" data-splitbee-event="Contact" class="contactForm">
+    <input id="name" required placeholder="Name" type="name">
     <br>
-    <input id="email" required placeholder="Email" type="email" bind:value={formValues.email}>
+    <input id="email" required placeholder="Email" type="email">
     <br>
-    <input id="Message" required placeholder="Message" type="text" bind:value={formValues.message}>
+    <input id="Message" required placeholder="Message" type="text">
     <br>
     <button type="submit">Submit</button>
    </form>
