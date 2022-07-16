@@ -8,6 +8,7 @@
     }
 
     let showContact: boolean;
+    let showMobileNav: boolean;
 </script>
 
 <main class="container">
@@ -17,11 +18,24 @@
             <button class="navitem">Home</button>
             <button class="navitem">About</button>
             <button on:click={() => redirect('#products')} class="navitem">Products</button>
-            <button on:click={() => showContact = true} class="navitem">Contact</button>
+            <button on:click={() => redirect('#contact')} class="navitem">Contact</button>
             <button class="navitem-call" on:click={() => redirect('tel:923002039046')}><Icon icon="carbon:phone-filled" /></button>
+            <button class="mobile-menu" on:click={() => showMobileNav = true}><Icon icon="carbon:overflow-menu-vertical" /></button>
         </div>
     </div>
-    <header class="">
+    {#if showMobileNav}
+    <div class="mobilenav">
+        <div class="links">
+            <button class="mobilenavitem">Home</button>
+            <button class="mobilenavitem">About</button>
+            <button on:click={() => redirect('#products')} class="mobilenavitem">Products</button>
+            <button on:click={() => redirect('#contact')} class="mobilenavitem">Contact</button>
+            <button class="mobilenavitem-call" on:click={() => redirect('tel:923002039046')}><Icon icon="carbon:phone-filled" /></button>
+            <button class="close-menu" on:click={() => showMobileNav = false}><Icon icon="carbon:close-filled" /></button>
+        </div>
+    </div>
+    {/if}
+    <header>
         <h1>Dawood Dates</h1>
         <h2>High Quality Dates</h2>
         <h2>From Pakistan To The World.</h2>
@@ -36,20 +50,19 @@
         <ProductCard name="Al Mahir Aseel Dates" description="High Quality Aseel Dates" imageURL="./items/croppedPouch.png"/>
         <ProductCard name="Al Mahir Aseel Dates" description="High Quality Aseel Dates" imageURL="./items/croppedPouch.png"/>
     </section>
-</main>
-<Popup bind:show={showContact}>
-   <h2 class="contacttext">Contact</h2>
-   <form action="/api/contact" method="post" enctype="text/plain" data-splitbee-event="Contact" class="contactForm">
-    <input id="name" required placeholder="Name" type="name">
+    <section id="contact">
+        <h2 class="contacttext">Contact</h2>
+   <form action="/api/contact" method="post" data-splitbee-event="Contact" class="contactForm">
+    <input name="name" required placeholder="Name" type="name">
     <br>
-    <input id="email" required placeholder="Email" type="email">
+    <input name="email" required placeholder="Email" type="email">
     <br>
-    <input id="Message" required placeholder="Message" type="text">
+    <input name="message" required placeholder="Message" type="text">
     <br>
-    <button type="submit">Submit</button>
+    <input type="submit" value="Submit">
    </form>
-   
-</Popup>
+    </section>
+</main>
 
 <style lang="scss">
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;900&display=swap');
@@ -159,11 +172,24 @@
                     animation: smoothColourChange 1.75s;
                 }
             }
+
+            .mobile-menu {
+                display: none;
+            }
         }
        
     }
 
-    .contactForm {
+    #contact {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 500px;
+        width: 100vw;
+        flex-direction: column;
+        gap: 10px;
+
+        .contactForm {
         input {
             width: 500px;
             padding: 12px 20px;
@@ -174,7 +200,10 @@
             transition: ease-in-out 600ms;
 
             &:focus {
-                border: 2px solid red;
+                border-bottom: 2px solid red;
+                border-top: none;
+                border-left: none;
+                border-right: none;
             }
         }
 
@@ -185,12 +214,13 @@
 }
 
 
-        button[type=submit] {
+        input[type=submit] {
             background: blue;
             color: white;
             border-bottom: 2px solid rgb(85, 255, 0);
             cursor: pointer;
         }
+    }
     }
 
     .infocard {
@@ -231,8 +261,34 @@
         flex-wrap: wrap;
     }
 
-    @media (max-width: 850px) {
-        .navitem { display:none; }
-        .navitem-call { display: none; }
+    @media (max-width: 900px) {
+       .navitem {
+        display: none;
+       }
+
+       .navbar>.navlinks>.navitem-call {
+        display: none;
+       }
+
+       .navbar>.navlinks>.mobile-menu {
+        font-size: 1.35rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 50px;
+                width: 50px;
+                border: none;
+                cursor: pointer;
+                background: #fff4f4;
+                border-radius: 20px;
+                transition: ease-in 200ms;
+                color: #464646;
+
+                &:hover {
+                    color: black;
+                    background-color: #ffe9e9;
+                    animation: smoothColourChange 1.75s;
+                }
+       }
     }
 </style>
