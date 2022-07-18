@@ -43,7 +43,7 @@
         </div>
     </div>
     {/if}
-<main class="container {showMobileNav ? "blur":""}">
+<main class="container {showMobileNav ? "blur unscrollable":""}">
     <div class="navbar">
         <img on:click={() => redirect('/')} class="logo" alt="logo" src="./logoImage.png">
         <div class="navlinks">
@@ -320,6 +320,12 @@
         }
     }
 
+    @media (max-width: 425px) {
+        header>h1{
+            font-size: 42px;
+        }
+    }
+
     .blur {
         transition: 600ms ease-in-out;
 width:100%;
@@ -331,6 +337,11 @@ background-size:cover;
 -o-filter: blur(4px);
 filter: blur(4px);
 }
+
+    .unscrollable {
+        height: 100vh;
+        overflow: hidden;
+    }
 
     .mobilenav {
         transition: 600ms ease-in-out;
