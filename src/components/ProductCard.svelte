@@ -78,6 +78,7 @@
   align-items: center;
   flex-direction: column;
   z-index: 2;
+  overflow: hidden;
 }
 
 .card .contentBox h3 {
