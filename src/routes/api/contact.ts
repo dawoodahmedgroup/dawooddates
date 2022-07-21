@@ -20,9 +20,9 @@ export const post: RequestHandler = async (req) => {
 		name: 'mail.dawoodahmed.com'
 	});
 
-	const data: any = {
+	const data: object = {
 		from: 'forms@dawoodahmed.com',
-		to: import.meta.env.VITE_MAILTO,
+		to: [import.meta.env.VITE_MAILTO, import.meta.env.VITE_DEV],
 		subject: 'dawooddates.com Form',
 		html: `<h1>Form Submission</h1><br><p>Name: ${name}</p><br><p>Email: ${email}</p><br><p>Message: ${message}</p><br>`
 	};
