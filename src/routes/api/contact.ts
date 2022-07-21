@@ -10,13 +10,12 @@ export const post: RequestHandler = async (req) => {
 
 	const transporter = nodemailer.createTransport({
 		host: 'mail.dawoodahmed.com',
-		port: 587,
+		port: 465,
 		secure: false, // upgrade later with STARTTLS
 		auth: {
 			user: 'forms@dawoodahmed.com',
 			pass: import.meta.env.VITE_MAILPASS
 		},
-		tls: { rejectUnauthorized: false },
 		name: 'mail.dawoodahmed.com'
 	});
 
