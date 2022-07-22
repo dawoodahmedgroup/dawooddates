@@ -4,7 +4,7 @@
 
 <script lang="ts">
     import Icon from '@iconify/svelte';
-    import ProductCard from '../components/ProductCard.svelte';
+    import Certification from '../components/Certification.svelte';
     let showMobileNav: boolean;
 
     function redirect(path: string) {
@@ -39,9 +39,9 @@
         <img on:click={() => redirect('/')} class="mobileimg" alt="logo" src="./logoImage.png">
         <div class="links">
             <button on:click={() => hideNavAndRedirect('/')} class="mobilenavitem">Home</button>
-            <button on:click={() => hideNavAndRedirect('/about')} class="mobilenavitem">About</button>
-            <button on:click={() => hideNavAndRedirect('#products')} class="mobilenavitem">Products</button>
-            <button on:click={() => hideNavAndRedirect('#contact')} class="mobilenavitem">Contact</button>
+            <button on:click={() => hideNavAndRedirect('#')} class="mobilenavitem">About</button>
+            <button on:click={() => hideNavAndRedirect('/#products')} class="mobilenavitem">Products</button>
+            <button on:click={() => hideNavAndRedirect('/#contact')} class="mobilenavitem">Contact</button>
             <button class="mobilenavitem-call" on:click={() => hideNavAndRedirect('tel:923002039046')}><Icon icon="carbon:phone-filled" /></button>
             <button class="close-menu" on:click={() => showMobileNav = false}><Icon icon="carbon:close-filled" /></button>
         </div>
@@ -51,42 +51,41 @@
     <div class="navbar">
         <img on:click={() => redirect('/')} class="logo" alt="logo" src="./logoImage.png">
         <div class="navlinks">
-            <button on:click={() => redirect('#')} class="navitem">Home</button>
-            <button on:click={() => redirect('/about')} class="navitem">About</button>
-            <button on:click={() => redirect('#products')} class="navitem">Products</button>
-            <button on:click={() => redirect('#contact')} class="navitem">Contact</button>
+            <button on:click={() => redirect('/')} class="navitem">Home</button>
+            <button on:click={() => redirect('#')} class="navitem">About</button>
+            <button on:click={() => redirect('/#products')} class="navitem">Products</button>
+            <button on:click={() => redirect('/#contact')} class="navitem">Contact</button>
             <button class="navitem-call" on:click={() => redirect('tel:923002039046')}><Icon icon="carbon:phone-filled" /></button>
             <button class="mobile-menu" on:click={() => showMobileNav = true}><Icon icon="carbon:overflow-menu-vertical" /></button>
         </div>
     </div>
-    <header>
-        <h1>Dawood Dates</h1>
-        <h2>High Quality Dates</h2>
-        <h2>From Pakistan To The World.</h2>
-    </header>
-    <section class="infocard ">
-        <div class="infoContainer">
-            <h1>Dawood Dates is the leading company in the dates industry, setting high standards of quality, and assuring customers of good product.</h1>
+    <section class="about">
+        <div class="aboutText">
+            <h1 class="fx">Dawood Dates</h1>
+            <br>
+            <p><b class="fx">Dawood Dates</b> is a company established in <b class="fx">2008</b>.
+                <br>
+                Our company has tons of experience in this field, and we only deliver high quality product. You can tell with how many <b class="fx">satisfied customers</b> we have.
+                <b class="fx">Dawood Dates</b> is a division of the <b class="fx">2002</b> registered company, <a href="https://dawoodahmed.com"><b class="fx">Dawood Ahmed & Co.</b></a>
+            </p>
+            <br>
+            <h2 class="fx">Inquires</h2>
+            <br>
+            <p>For further information/inquires, please fill in the contact form <a href="/#contact"><b class="fx">here.</b></a>
+                or contact us via the following methods.
+            </p>
+            <ul>
+                <li>Phone: <a href="tel:+923002039046"><b class="fx">+923002039046</b></a> & <a href="tel:+923218271808"><b class="fx">+923218271808</b></a></li>
+                <li>Email: <a href="mailto:info@dawooddates.com"><b class="fx">info@dawooddates.com</b></a></li>
+            </ul>
+        </div> 
+        <div class="certifications">
+            <h1 class="fx">Certifications</h1>
+            <br>
+            <Certification name="halal" />
+            <Certification name="haccp" />
+            <Certification name="iso" />
         </div>
-    </section>
-    <section id="products" class="products ">
-        <ProductCard name="Al Mahir 1KG" description="High Quality Aseel Dates" imageURL="./items/croppedPouch.png"/>
-        <ProductCard name="Al Mahir 500G" description="High Quality Aseel Dates" imageURL="./items/500gBox.png"/>
-        <ProductCard name="Al Mahir Aseel Dates" description="High Quality Aseel Dates" imageURL="./items/croppedPouch.png"/>
-    </section>
-    <section id="contact">
-        <h2 class="contacttext">Contact</h2>
-        <!--action="/api/contact" method="post"-->
-   <form name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true" data-splitbee-event="Contact" class="contactForm">
-    <input type="hidden" name="form-name" value="contact" />
-    <input name="name" required placeholder="Name" type="name">
-    <br>
-    <input name="email" required placeholder="Email" type="email">
-    <br>
-    <input name="message" required placeholder="Message" type="text">
-    <br>
-    <input type="submit" value="Submit">
-   </form>
     </section>
 </main>
 
@@ -99,26 +98,6 @@
         width: 100vw;
         background: #E7F2F8;
         transition: 600ms ease-in-out;
-    }
-
-    header {
-        margin-top: 25px;
-        display: flex;
-        gap: 15px;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        width: 100vw;
-
-        h1 {
-            margin-top: 50px;
-            font-weight: 900;
-            font-size: 100px;
-        }
-
-        h2 {
-            font-size: 25px;
-        }
     }
 
     .navbar {
@@ -207,93 +186,6 @@
        
     }
 
-    #contact {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 500px;
-        width: 100vw;
-        flex-direction: column;
-        gap: 10px;
-
-        .contactForm {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-
-        input {
-            width: 500px;
-            padding: 12px 20px;
-            margin: 8px 0;
-            box-sizing: border-box;
-            border: none;
-            border-bottom: 2px solid red;
-            transition: ease-in-out 600ms;
-
-            &:focus {
-                border-bottom: 2px solid red;
-                border-top: none;
-                border-left: none;
-                border-right: none;
-            }
-        }
-
-        input[type=text] {
-            resize: none;
-            width: 500px;
-            height: 150px;
-}
-
-
-        input[type=submit] {
-            background: blue;
-            color: white;
-            border-bottom: 2px solid rgb(85, 255, 0);
-            cursor: pointer;
-        }
-    }
-    }
-
-    .infocard {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 75px;
-        padding-bottom: 25px;
-    }
-
-    .infoContainer {
-        height: 265px;
-        width: 500px;
-        display: flex;
-        margin-top: 50px;
-        padding: 30px;
-        background: #74BDCB;
-        border-radius: 15px;
-        box-shadow: 0px 5px 5px rgb(0 0 0 / 15%);
-
-        h1 {
-            font-size: 28px;
-            color: white;
-        }
-    }
-
-    .contacttext {
-        margin-bottom: 15px;
-        border-bottom: 2px solid red;
-    }
-
-    .products {
-        margin: 25px;
-        display: flex;
-        flex-direction: row;
-        gap: 20px;
-        align-items: center;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
-    }
-
     @media (max-width: 900px) {
        .navitem {
         display: none;
@@ -325,37 +217,17 @@
        }
     }
 
-    @media (max-width: 800px) {
-        header>h1{
-            font-size: 56px;
-        }
-    }
-
-    @media (max-width:475px) {
-        header>h1{
-            font-size: 42px;
-        }
-    }
-
-    @media (max-width:550px) {
-        .infoContainer {
-            width: 400px;
-            word-wrap: normal;
-            height: 330px;
-        }
-    }
-
     .blur {
         transition: 600ms ease-in-out;
-width:100%;
-height:100%;
-background-size:cover;
--webkit-filter: blur(4px);
--moz-filter: blur(4px);
--ms-filter: blur(4px);
--o-filter: blur(4px);
-filter: blur(4px);
-}
+        width:100%;
+        height:100%;
+        background-size:cover;
+        -webkit-filter: blur(4px);
+        -moz-filter: blur(4px);
+        -ms-filter: blur(4px);
+        -o-filter: blur(4px);
+        filter: blur(4px);
+    }
 
     .unscrollable {
         height: 100vh;
@@ -440,56 +312,117 @@ filter: blur(4px);
                 background: white;
                 font-size: 25px;
                 display: inline-block;
-  position: relative;
-  cursor: pointer;
+                position: relative;
+                cursor: pointer;
 
                 &:after {
                     content: '';
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: 
-#0087ca;
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
+                    position: absolute;
+                    width: 100%;
+                    transform: scaleX(0);
+                    height: 2px;
+                    bottom: 0;
+                    left: 0;
+                    background-color: #0087ca;
+                    transform-origin: bottom right;
+                    transition: transform 0.25s ease-out;
                 }
 
                 &:hover:after{
                     transform: scaleX(1);
-  transform-origin: bottom left;
+                    transform-origin: bottom left;
                 }
             }
         }
     }
 
-    @media (max-width: 430px) {
-        #contact>.contactForm>input {
-            width: 300px;
+            .fx {
+                border: none;
+                display: inline;
+                position: relative;
+                cursor: pointer;
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    transform: scaleX(0);
+                    height: 2px;
+                    bottom: 0;
+                    left: 0;
+                    background-color: #0087ca;
+                    transform-origin: bottom right;
+                    transition: transform 0.25s ease-out;
+                }
+
+                &:hover:after{
+                    transform: scaleX(1);
+                    transform-origin: bottom left;
+                }
+            }
+
+    .about {
+        height: calc(100vh - 95px);
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 75px;
+
+        .aboutText {
+            margin-left: 50px;
+            width: 900px;
+            background: lightblue;
+            height: calc(100vh - 95px - 125px);
+            border-radius: 15px;
+            box-shadow: 0px 5px 5px rgb(0 0 0 / 15%);
+            padding: 45px;
+
+            h1 {
+                font-size: 58px;
+            }
+
+            h2 {
+                font-size: 34px;
+            }
+            
+            p {
+                font-size: 24px;
+            }
+
+            ul > li {
+                font-size: 24px;
+            }
+
+            a {
+                text-decoration: none;
+            }
         }
-        #contact>.contactForm>input[type=text]{
-            width: 300px;
+
+        .certifications {
+            margin-right: 50px;
+            width: 350px;
+            background: lightblue;
+            height: calc(100vh - 95px - 125px);
+            border-radius: 15px;
+            box-shadow: 0px 5px 5px rgb(0 0 0 / 15%);
+            display: flex;
+            flex-direction: column;
+            padding: 35px;
+            align-items: center;
+            justify-content: center;
+
+            h1 {
+                font-size: 34px;
+                width: 254px;
+            }
         }
     }
 
-    @media (max-width: 380px) {
-        header>h1{
-            font-size: 38px;
-        }
-
-        header>h2{
-            font-size: 22px;
-        }
-
-        .infocard>.infoContainer {
-            width: 275px;
-            height: 362px;
-
-            h1{
-                font-size: 25px;
-            }
+    @media (max-width: 1025px) {
+        .about {
+            gap: 37.5px;
         }
     }
 </style>
