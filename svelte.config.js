@@ -11,7 +11,7 @@ const config = {
 		prerender: {
             crawl: true,
             enabled: true,
-            pages: ['*'],
+            entries: ['*'],
         },
 	}
 };
