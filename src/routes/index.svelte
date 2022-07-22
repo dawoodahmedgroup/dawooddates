@@ -1,4 +1,5 @@
 <script lang="ts">
+    export const prerender = true;
     import Icon from '@iconify/svelte';
     import ProductCard from '../components/ProductCard.svelte';
     let showMobileNav: boolean;
