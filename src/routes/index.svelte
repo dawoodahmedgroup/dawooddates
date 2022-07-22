@@ -78,7 +78,7 @@
         <h2 class="contacttext">Contact</h2>
         <!--action="/api/contact" method="post"-->
    <form name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true" data-splitbee-event="Contact" class="contactForm">
-    <input type="hidden" name="contact" value="contact" />
+    <input type="hidden" name="form-name" value="contact" />
     <input name="name" required placeholder="Name" type="name">
     <br>
     <input name="email" required placeholder="Email" type="email">
