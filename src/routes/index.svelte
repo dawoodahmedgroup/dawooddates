@@ -72,7 +72,6 @@
     <section id="products" class="products ">
         <ProductCard name="Al Mahir 1KG" description="High Quality Aseel Dates" imageURL="./items/croppedPouch.png"/>
         <ProductCard name="Al Mahir 500G" description="High Quality Aseel Dates" imageURL="./items/500gBox.png"/>
-        <ProductCard name="Al Mahir Aseel Dates" description="High Quality Aseel Dates" imageURL="./items/croppedPouch.png"/>
     </section>
     <section id="contact">
         <h2 class="contacttext">Contact</h2>
@@ -365,7 +364,7 @@ filter: blur(4px);
     .mobilenav {
         transition: 600ms ease-in-out;
         position: fixed;
-        width: 400px;
+        width: 100vw;
         height: 100%;
         z-index: 99 !important;
         background-color: white;
@@ -490,6 +489,16 @@ filter: blur(4px);
             h1{
                 font-size: 25px;
             }
+        }
+    }
+
+    @media (max-width: 325px) {
+        header>h1{
+            font-size: 34px;
+        }
+
+        header>h2{
+            font-size: 20px;
         }
     }
 </style>
