@@ -473,32 +473,23 @@ filter: blur(4px);
         }
     }
 
-    @media (max-width: 380px) {
+
+    @media (max-width: 400px) {
         header>h1{
-            font-size: 38px;
+            font-size: 32px;
         }
 
         header>h2{
-            font-size: 22px;
+            font-size: 18px;
         }
 
         .infocard>.infoContainer {
-            width: 275px;
-            height: 362px;
+            width: 250px;
+            height: 335px;
 
-            h1{
-                font-size: 25px;
+            h1 {
+                font-size: 22px;
             }
-        }
-    }
-
-    @media (max-width: 325px) {
-        header>h1{
-            font-size: 34px;
-        }
-
-        header>h2{
-            font-size: 20px;
         }
     }
 </style>

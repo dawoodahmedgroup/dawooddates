@@ -502,7 +502,7 @@
         }
     }
 
-    @media (max-width: 380px) {
+    @media (max-width: 400px) {
         .about {
             .aboutText {
                 width: 337px;
