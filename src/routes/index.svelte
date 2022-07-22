@@ -73,7 +73,7 @@
     <section id="contact">
         <h2 class="contacttext">Contact</h2>
         <!--action="/api/contact" method="post"-->
-   <form netlify data-splitbee-event="Contact" class="contactForm">
+   <form name="contact" netlify data-splitbee-event="Contact" class="contactForm">
     <input name="name" required placeholder="Name" type="name">
     <br>
     <input name="email" required placeholder="Email" type="email">
