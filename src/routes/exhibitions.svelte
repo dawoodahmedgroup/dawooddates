@@ -66,21 +66,21 @@
         <Exhibit
         name="Trip To Turkiyë"
         description="Dawood Dates was included in an official delegation to Turkiyë with the prime minister of pakistan."
-        cover="./exhibits/turkiye/first.jpeg"
-        image1="./exhibits/turkiye/mushtaq.jpeg"
-        image2="./exhibits/turkiye/pm.jpeg"
-        image3="./exhibits/turkiye/outside.jpeg"
-        image4="./exhibits/turkiye/dinner.jpeg"
+        cover="/exhibits/turkiye/first.jpeg"
+        image1="/exhibits/turkiye/mushtaq.jpeg"
+        image2="/exhibits/turkiye/pm.jpeg"
+        image3="/exhibits/turkiye/outside.jpeg"
+        image4="/exhibits/turkiye/dinner.jpeg"
         />
 
         <ExhibitLong
         name="FruitLogistica"
         description="Dawood Dates participated in the fruitlogistica event with many fruit importers & exporters from across the globe."
-        cover="./exhibits/logistica/1.jpeg"
-        image1="./exhibits/logistica/2.jpeg"
-        image2="./exhibits/logistica/3.jpeg"
-        image3="./exhibits/logistica/4.jpeg"
-        image4="./exhibits/logistica/5.jpeg"
+        cover="/exhibits/logistica/1.jpeg"
+        image1="/exhibits/logistica/2.jpeg"
+        image2="/exhibits/logistica/3.jpeg"
+        image3="/exhibits/logistica/4.jpeg"
+        image4="/exhibits/logistica/5.jpeg"
         />
     </section>
 </main>

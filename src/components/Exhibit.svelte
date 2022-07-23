@@ -6,21 +6,27 @@
     export let image2: string;
     export let image3: string;
     export let image4: string;
+
+    function clickRedirect(path: string) {
+      window.open(`https://dawooddates.com${path}`, '_blank');
+    }
+
+    
 </script>
 
 <div class="exhibit">
   <div class="visible">
-    <img class="first" src={cover} alt={name}>
+    <img on:click={()=>clickRedirect(cover)} class="first" src={cover} alt={name}>
   <br>
   <h1>{name}</h1>
   <br>
   <p class="info">{description}</p>
   </div>
   <div class="invisible">
-    <img class="image" src={image1} alt={name}>
-    <img class="image" src={image2} alt={name}>
-    <img class="image" src={image3} alt={name}>
-    <img class="image" src={image4} alt={name}>
+    <img on:click={()=>clickRedirect(image1)} class="image" src={image1} alt={name}>
+    <img on:click={()=>clickRedirect(image2)} class="image" src={image2} alt={name}>
+    <img on:click={()=>clickRedirect(image3)} class="image" src={image3} alt={name}>
+    <img on:click={()=>clickRedirect(image4)} class="image" src={image4} alt={name}>
   </div>
 </div>
 
@@ -50,6 +56,7 @@
 
       .first {
       transition: 600ms ease-in-out;
+      cursor: pointer;
       height: 200px;
       width: 150px; 
       border-radius: 25px;
@@ -77,6 +84,7 @@
         width: 100px;
         margin: 2px;
         border-radius: 25px;
+        cursor: pointer;
       }
     }
 
