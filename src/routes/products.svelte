@@ -40,6 +40,7 @@
         <div class="links">
             <button on:click={() => hideNavAndRedirect('/')} class="mobilenavitem">Home</button>
             <button on:click={() => hideNavAndRedirect('/about')} class="mobilenavitem">About</button>
+            <button on:click={() => hideNavAndRedirect('/exhibitions')} class="mobilenavitem">Exhibitions</button>
             <button on:click={() => hideNavAndRedirect('#')} class="mobilenavitem">Products</button>
             <button on:click={() => hideNavAndRedirect('/#contact')} class="mobilenavitem">Contact</button>
             <button class="mobilenavitem-call" on:click={() => hideNavAndRedirect('tel:923002039046')}><Icon icon="carbon:phone-filled" /></button>
@@ -53,6 +54,7 @@
         <div class="navlinks">
             <button on:click={() => redirect('/')} class="navitem">Home</button>
             <button on:click={() => redirect('/about')} class="navitem">About</button>
+            <button on:click={() => redirect('/exhibitions')} class="navitem">Exhibitions</button>
             <button on:click={() => redirect('#')} class="navitem">Products</button>
             <button on:click={() => redirect('/#contact')} class="navitem">Contact</button>
             <button class="navitem-call" on:click={() => redirect('tel:923002039046')}><Icon icon="carbon:phone-filled" /></button>
@@ -132,7 +134,7 @@
             .navitem {
                 font-size: 1.35rem;
                 height: 50px;
-                width: 115px;
+                width: 135px;
                 border: none;
                 cursor: pointer;
                 background: #fff4f4;

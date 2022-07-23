@@ -4,7 +4,7 @@
 
 <script lang="ts">
     import Icon from '@iconify/svelte';
-    import ProductCard from '../components/ProductCard.svelte';
+    import Exhibit from '../components/Exhibit.svelte';
     let showMobileNav: boolean;
 
     function redirect(path: string) {
@@ -52,38 +52,25 @@
     <div class="navbar">
         <img on:click={() => redirect('/')} class="logo" alt="logo" src="./logoImage.png">
         <div class="navlinks">
-            <button on:click={() => redirect('#')} class="navitem">Home</button>
+            <button on:click={() => redirect('/')} class="navitem">Home</button>
             <button on:click={() => redirect('/about')} class="navitem">About</button>
-            <button on:click={() => redirect('/exhibitions')} class="navitem">Exhibitions</button>
+            <button on:click={() => redirect('#exhibitions')} class="navitem">Exhibitions</button>
             <button on:click={() => redirect('/products')} class="navitem">Products</button>
-            <button on:click={() => redirect('#contact')} class="navitem">Contact</button>
+            <button on:click={() => redirect('/#contact')} class="navitem">Contact</button>
             <button class="navitem-call" on:click={() => redirect('tel:923002039046')}><Icon icon="carbon:phone-filled" /></button>
             <button class="mobile-menu" on:click={() => showMobileNav = true}><Icon icon="carbon:overflow-menu-vertical" /></button>
         </div>
     </div>
-    <header>
-        <img src="./logoImage.png" alt="Logo">
-        <h2>High Quality Dates</h2>
-        <h2>From Pakistan To The World.</h2>
-    </header>
-    <section class="infocard ">
-        <div class="infoContainer">
-            <h1>Dawood Dates is the leading company in the dates industry, setting high standards of quality, and assuring customers of good product.</h1>
-        </div>
-    </section>
-    <section id="contact">
-        <h2 class="contacttext">Contact</h2>
-        <!--action="/api/contact" method="post"-->
-   <form name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true" data-splitbee-event="Contact" class="contactForm">
-    <input type="hidden" name="form-name" value="contact" />
-    <input name="name" required placeholder="Name" type="name">
-    <br>
-    <input name="email" required placeholder="Email" type="email">
-    <br>
-    <input name="message" required placeholder="Message" type="text">
-    <br>
-    <input type="submit" value="Submit">
-   </form>
+    <section class="exhibitions">
+        <Exhibit
+        name="Trip To Turkiyë"
+        description="Dawood Dates was included in an official delegation to Turkiyë with the prime minister of pakistan."
+        cover="./exhibits/turkiye/first.jpeg"
+        image1="./exhibits/turkiye/first.jpeg"
+        image2="./exhibits/turkiye/first.jpeg"
+        image3="./exhibits/turkiye/first.jpeg"
+        image4="./exhibits/turkiye/first.jpeg"
+        info="Dawood Dates was asked to be part of the delegation which travelled to Turkiyë alongside the prime minister of pakistan." />
     </section>
 </main>
 
@@ -96,27 +83,7 @@
         width: 100vw;
         background: #E7F2F8;
         transition: 600ms ease-in-out;
-    }
-
-    header {
-        margin-top: 25px;
-        display: flex;
-        gap: 15px;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        width: 100vw;
-
-        img {
-            margin-top: 50px;
-            height: 275px;
-            width: 550px;
-        }
-
-        h2 {
-            font-size: 25px;
-        }
-    }
+    }   
 
     .navbar {
         border-bottom: 1px solid #dadce0;
@@ -204,94 +171,6 @@
        
     }
 
-    #contact {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 500px;
-        width: 100vw;
-        flex-direction: column;
-        gap: 10px;
-
-        .contactForm {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-
-        input {
-            width: 500px;
-            padding: 12px 20px;
-            margin: 8px 0;
-            box-sizing: border-box;
-            border: none;
-            border-bottom: 2px solid red;
-            transition: ease-in-out 600ms;
-
-            &:focus {
-                border-bottom: 2px solid red;
-                border-top: none;
-                border-left: none;
-                border-right: none;
-            }
-        }
-
-        input[type=text] {
-            resize: none;
-            width: 500px;
-            height: 150px;
-}
-
-
-        input[type=submit] {
-            background: blue;
-            color: white;
-            border-bottom: 2px solid rgb(85, 255, 0);
-            cursor: pointer;
-        }
-    }
-    }
-
-    .infocard {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 75px;
-        padding-bottom: 25px;
-    }
-
-    .infoContainer {
-        height: 265px;
-        width: 500px;
-        display: flex;
-        margin-top: 50px;
-        padding: 30px;
-        background: #74BDCB;
-        overflow: hidden;
-        border-radius: 15px;
-        box-shadow: 0px 5px 5px rgb(0 0 0 / 15%);
-
-        h1 {
-            font-size: 28px;
-            color: white;
-        }
-    }
-
-    .contacttext {
-        margin-bottom: 15px;
-        border-bottom: 2px solid red;
-    }
-
-    .products {
-        margin: 25px;
-        display: flex;
-        flex-direction: row;
-        gap: 20px;
-        align-items: center;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
-    }
-
     @media (max-width: 900px) {
        .navitem {
         display: none;
@@ -321,26 +200,6 @@
                     animation: smoothColourChange 1.75s;
                 }
        }
-    }
-
-    @media (max-width: 800px) {
-        header>h1{
-            font-size: 56px;
-        }
-    }
-
-    @media (max-width:475px) {
-        header>h1{
-            font-size: 42px;
-        }
-    }
-
-    @media (max-width:550px) {
-        .infoContainer {
-            width: 400px;
-            word-wrap: normal;
-            height: 330px;
-        }
     }
 
     .blur {
@@ -463,32 +322,11 @@ filter: blur(4px);
         }
     }
 
-    @media (max-width: 430px) {
-        #contact>.contactForm>input {
-            width: 300px;
-        }
-        #contact>.contactForm>input[type=text]{
-            width: 300px;
-        }
-    }
-
-
-    @media (max-width: 400px) {
-        header>h1{
-            font-size: 32px;
-        }
-
-        header>h2{
-            font-size: 18px;
-        }
-
-        .infocard>.infoContainer {
-            width: 250px;
-            height: 335px;
-
-            h1 {
-                font-size: 22px;
-            }
-        }
+    .exhibitions {
+        height: calc(100vh - 95px);
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
     }
 </style>
