@@ -300,7 +300,7 @@ filter: blur(4px);
             }
 
             .mobilenavitem {
-                width: 100px;
+                width: 137px;
                 border: none;
                 background: white;
                 font-size: 25px;

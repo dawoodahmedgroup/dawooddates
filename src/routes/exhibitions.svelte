@@ -5,6 +5,7 @@
 <script lang="ts">
     import Icon from '@iconify/svelte';
     import Exhibit from '../components/Exhibit.svelte';
+    import ExhibitLong from '../components/ExhibitLong.svelte';
     let showMobileNav: boolean;
 
     function redirect(path: string) {
@@ -66,11 +67,21 @@
         name="Trip To Turkiyë"
         description="Dawood Dates was included in an official delegation to Turkiyë with the prime minister of pakistan."
         cover="./exhibits/turkiye/first.jpeg"
-        image1="./exhibits/turkiye/first.jpeg"
-        image2="./exhibits/turkiye/first.jpeg"
-        image3="./exhibits/turkiye/first.jpeg"
-        image4="./exhibits/turkiye/first.jpeg"
-        info="Dawood Dates was asked to be part of the delegation which travelled to Turkiyë alongside the prime minister of pakistan." />
+        image1="./exhibits/turkiye/mushtaq.jpeg"
+        image2="./exhibits/turkiye/pm.jpeg"
+        image3="./exhibits/turkiye/outside.jpeg"
+        image4="./exhibits/turkiye/dinner.jpeg"
+        />
+
+        <ExhibitLong
+        name="FruitLogistica"
+        description="Dawood Dates participated in the fruitlogistica event with many fruit importers & exporters from across the globe."
+        cover="./exhibits/logistica/1.jpeg"
+        image1="./exhibits/logistica/2.jpeg"
+        image2="./exhibits/logistica/3.jpeg"
+        image3="./exhibits/logistica/4.jpeg"
+        image4="./exhibits/logistica/5.jpeg"
+        />
     </section>
 </main>
 
@@ -292,7 +303,7 @@ filter: blur(4px);
             }
 
             .mobilenavitem {
-                width: 100px;
+                width: 137px;
                 border: none;
                 background: white;
                 font-size: 25px;
@@ -328,5 +339,6 @@ filter: blur(4px);
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
+        gap: 25px;
     }
 </style>

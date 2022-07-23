@@ -27,7 +27,7 @@
 <style lang="scss">
   .exhibit {
     background-color: lightcoral;
-    width: 250px;
+    width: 300px;
     height: 500px;
     border-radius: 25px;
     display: flex;
@@ -40,7 +40,7 @@
     transition: 600ms ease-in-out;
 
     .visible {
-      width: 170px;
+      width: 300px;
       height: 440px;
       display: flex;
       flex-direction: column;
@@ -57,7 +57,7 @@
 
     h1 {
       transition: 600ms ease-in-out;
-      max-width: 150px;
+      max-width: 300px;
       text-align: center;
     }
 
