@@ -40,7 +40,7 @@
         <div class="links">
             <button on:click={() => hideNavAndRedirect('/')} class="mobilenavitem">Home</button>
             <button on:click={() => hideNavAndRedirect('/about')} class="mobilenavitem">About</button>
-            <button on:click={() => hideNavAndRedirect('#products')} class="mobilenavitem">Products</button>
+            <button on:click={() => hideNavAndRedirect('/products')} class="mobilenavitem">Products</button>
             <button on:click={() => hideNavAndRedirect('#contact')} class="mobilenavitem">Contact</button>
             <button class="mobilenavitem-call" on:click={() => hideNavAndRedirect('tel:923002039046')}><Icon icon="carbon:phone-filled" /></button>
             <button class="close-menu" on:click={() => showMobileNav = false}><Icon icon="carbon:close-filled" /></button>
@@ -53,7 +53,7 @@
         <div class="navlinks">
             <button on:click={() => redirect('#')} class="navitem">Home</button>
             <button on:click={() => redirect('/about')} class="navitem">About</button>
-            <button on:click={() => redirect('#products')} class="navitem">Products</button>
+            <button on:click={() => redirect('/products')} class="navitem">Products</button>
             <button on:click={() => redirect('#contact')} class="navitem">Contact</button>
             <button class="navitem-call" on:click={() => redirect('tel:923002039046')}><Icon icon="carbon:phone-filled" /></button>
             <button class="mobile-menu" on:click={() => showMobileNav = true}><Icon icon="carbon:overflow-menu-vertical" /></button>
@@ -68,10 +68,6 @@
         <div class="infoContainer">
             <h1>Dawood Dates is the leading company in the dates industry, setting high standards of quality, and assuring customers of good product.</h1>
         </div>
-    </section>
-    <section id="products" class="products ">
-        <ProductCard name="Al Mahir 1KG" description="High Quality Aseel Dates" imageURL="./items/croppedPouch.png"/>
-        <ProductCard name="Al Mahir 500G" description="High Quality Aseel Dates" imageURL="./items/500gBox.png"/>
     </section>
     <section id="contact">
         <h2 class="contacttext">Contact</h2>
@@ -269,6 +265,7 @@
         margin-top: 50px;
         padding: 30px;
         background: #74BDCB;
+        overflow: hidden;
         border-radius: 15px;
         box-shadow: 0px 5px 5px rgb(0 0 0 / 15%);
 
